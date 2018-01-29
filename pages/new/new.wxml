@@ -1,0 +1,19 @@
+<!--pages/new/new.wxml-->
+<view>
+    <div> 新建行程</div>
+    <label for='tour_name'>行程名称:</label>
+    <input id='tour_name' bindinput='tour_name_value'></input>
+    <label for='tour_date'>行程日期：</label>
+    <input id='tour_date' bindinput="tour_date_value"></input>
+
+    <label for='date'>请选择日期</label>
+    <picker mode='date'>
+        <view>时间选择</view>
+    </picker>
+    <picker mode="date" value="{{tour_date_a}}" start="2015-09-01" end="2017-09-01" bindchange="tour_date">
+        <view class="picker">
+            当前选择: {{tour_date_a}}
+        </view>
+    </picker>
+    <button bindtap="submit_tour_new">提交</button>
+</view>

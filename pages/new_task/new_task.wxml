@@ -1,0 +1,32 @@
+<!--pages/new_task/new_task.wxml-->
+<view>
+    <view class='input-list'>
+        <label>行程标题:</label>
+        <input class='task-input'></input>
+    </view>
+
+    <view class='input-list'>
+        <label>出发日期:</label>
+        <picker mode='date' class='task-input' value='task_start_date'>
+            <view>{{task_start_date}}</view>
+        </picker>
+    </view>
+
+    <view class='input-list'>
+        <label>行程天数:</label>
+        <input value='{{task_number}}' class='task-input'></input>
+    </view>
+
+    <view class='input-list'>
+        <label>出行目的地:</label>
+        <picker mode='region' class='task-input'>
+            <view>北京</view>
+        </picker>
+    </view>
+
+	<view>
+		<map></map>
+	</view>
+
+
+</view>

@@ -1,0 +1,14 @@
+/* pages/new_task/new_task.wxss */
+.input-list{
+	block-size: boreder-box;
+	height: 42px;
+	line-height: 42px;
+	display: flex;
+	border: 1px solid red;
+	align-items: center;
+}
+.input-list .task-input{
+	width: 50%;
+	height: 40px;
+	border: 1px solid black;
+}
