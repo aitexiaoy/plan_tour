@@ -4,7 +4,7 @@
     "pages/logs/logs",
     "pages/new/new",
     "pages/list/list",
-	"pages/new_task/new_task"
+	  "pages/new_task/new_task"
   ],
   "window":{
     "backgroundTextStyle":"light",

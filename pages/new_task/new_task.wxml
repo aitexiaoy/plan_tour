@@ -19,13 +19,13 @@
 
     <view class='input-list'>
         <label>出行目的地:</label>
-        <picker mode='region' class='task-input'>
-            <view>北京</view>
+        <picker mode='region' class='task-input' bindchange='change_address'>
+            <view>{{task_address}}</view>
         </picker>
     </view>
 
 	<view>
-		<map></map>
+		<map longitude='{{geo.long}}' latitude='{{geo.lat}}'></map>
 	</view>
 
 

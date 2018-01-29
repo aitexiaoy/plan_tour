@@ -1,3 +1,5 @@
+const { ajax_get}= require('../../global_config.js')
+
 Page({
 
   /**
@@ -6,6 +8,11 @@ Page({
   data: {
 	  task_start_date:'2015-01-02',
 	  task_number:3,
+    task_address:'北京',
+    geo:{
+      lat:'39.928353',
+      long:'116.416357'
+    }
   },
 
   /**
@@ -66,5 +73,36 @@ Page({
    */
   onShareAppMessage: function () {
 	
+  },
+
+/*** 选择出行目的地 */
+  change_address(e){
+    console.log('---------------------------------')
+    this.setData(({
+      task_address:e.detail.value.toString().replace(/[',']/g,'')
+    }))
+    console.log(this.data.task_address)
+    this.get_jingweidu()
+  },
+
+/**** 获取地理经纬度坐标 */
+  get_jingweidu(){
+      let options={
+        url:'/geocode/',
+        data:{
+          address: this.data.task_address,
+        }
+      }
+      ajax_get(options).then((result)=>{
+        console.log(result);
+        this.setData({
+          geo:{
+            lat:result.latitude,
+            long:result.longitude,
+          }
+        })
+      }).catch((error)=>{
+        console.log(error)
+      })
   }
 })
